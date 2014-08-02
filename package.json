@@ -1,0 +1,14 @@
+{
+  "name": "apinic-movies",
+  "version": "0.0.1",
+  "description": "Información sobre las películas que están disponibles en los cines de Nicaragua",
+  "dependencies": {
+    "body-parser": "^1.5.2",
+    "express": "^4.6.1",
+    "mongoose": "^3.8.14"
+  },
+  "main": "api.js",
+  "engines": {
+    "node": "0.10.x"
+  }
+}
