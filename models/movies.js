@@ -1,23 +1,22 @@
-exports.setup = function(_mongoose,_db){
+exports.setup = function(_mongoose, _db) {
+  var fileName = require('path').basename(__filename, '.js');
 
-    var file_name = require('path').basename( __filename, '.js' );
+  var schema = _mongoose.Schema({
+    'name': String,
+    'synopsis': String,
+    'front': String,
+    'duration': String,
+    'clasification': String,
+    'genres': String,
+    'created_at': {
+      'type': Date,
+      'default': Date.now
+    }
+  });
 
-    var schema = _mongoose.Schema({
-        name: String,
-        synopsis: String,
-        front: String,
-        duration: String,
-        clasification: String,
-        genres: String,
-        created_at: {
-          type: Date,
-          default:Date.now
-        }
-    });
+  _db.model(fileName, schema);
 
-    _db.model( file_name, schema);
+  var data = _db.model(fileName);
 
-    var data = _db.model( file_name );
-
-    return data;
+  return data;
 };

@@ -4,15 +4,15 @@
  * @type {exports}
  */
 
-var fs = require( 'fs' );
-var path = require( 'path' );
+var fs = require('fs');
+var path = require('path');
 
-var files = fs.readdirSync( __dirname );
+var files = fs.readdirSync(__dirname);
 
-files.forEach(function( file ){
-    var file_name = path.basename( file, '.js' );
+files.forEach(function(file) {
+  var fileName = path.basename(file, '.js');
 
-    if( file_name != 'index' ){
-        exports[file_name] = require( './' + file_name );
-    }
+  if (fileName !== 'index') {
+    exports[fileName] = require('./' + fileName);
+  }
 });
