@@ -47,6 +47,7 @@ module.exports.home = function(req, res) {
     );
   }
   else {
+    req.session.flash = [];
     res.render('index');
   }
 };
