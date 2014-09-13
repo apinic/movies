@@ -25,7 +25,7 @@ module.exports.login = function(req, res) {
 module.exports.home = function(req, res) {
   res.locals.accessToken = process.env.APINIC_MOVIES_ACCESS_TOKEN;
   if (req.method === 'POST') {
-    request.post('http://localhost:5000/v1/movie/add',
+    request.post('http://movies.apinic.org/v1/movie/add',
       {
         form:req.body
       },
