@@ -1,7 +1,15 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var serveStatic = require('serve-static');
+var session = require('express-session');
 var app = express();
-var versions = require('./versions');
+var routes = require('./routes');
+
+// set view directory
+app.set('views', __dirname + '/views');
+
+// set view engine
+app.set('view engine', 'jade');
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({extended: false}));
@@ -9,14 +17,23 @@ app.use(bodyParser.urlencoded({extended: false}));
 // parse application/json
 app.use(bodyParser.json());
 
+// JSON spaces
 app.set('json spaces', 2);
 
-app.get('/v1/movie/all', versions['1'].all);
-app.post('/v1/movie/add', versions['1'].add);
-app.delete('/v1/movie/:id', versions['1'].delete);
+// serve static file
+app.use(serveStatic('public/', {'index': false}));
 
-app.get('*', function(req, res) {
-  res.status(404).json({error:{message:'Recurso no encontrado.'}});
-});
+// session
+app.use(session({
+  secret: process.env.APINIC_MOVIES_SESSION_SECRET,
+  resave: true,
+  saveUninitialized: true
+}));
+
+// flash
+app.use(require('flash')());
+
+// routes
+routes.setup(app);
 
 app.listen(process.env.PORT || 5000);
