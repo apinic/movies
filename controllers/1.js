@@ -1,7 +1,9 @@
 var models = require('../models');
 
 module.exports.all = function(req, res) {
-  models.movies.find({}, null, {sort: [['created_at', -1]]}, function(err, rows) {
+  var query = models.movies.find({}).sort({'created_at': -1});
+
+  query.exec(function(err, rows) {
     if (err) {
       res.json({error:{message:'El nombre es requerido.'}});
     }
