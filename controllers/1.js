@@ -21,6 +21,7 @@ module.exports.add = function(req, res) {
   var clasification = req.body.clasification;
   var genres = req.body.genres;
   var accessToken = req.body['access_token'];
+  var theaters = req.body.theaters;
 
   if (process.env.APINIC_MOVIES_ACCESS_TOKEN !== accessToken) {
     res.json({error:{message:'access_token inválido.'}});
@@ -43,6 +44,9 @@ module.exports.add = function(req, res) {
   else if (genres === '') {
     res.json({error:{message:'Los géneros son requeridos.'}});
   }
+  else if(theaters === '') {
+    res.json({error:{message:'Son requeridos los cinemas.'}});
+  }
   else {
     var movie = new models.movies;
 
@@ -52,6 +56,7 @@ module.exports.add = function(req, res) {
     movie.duration = duration;
     movie.clasification = clasification;
     movie.genres = genres;
+    movie.theaters = theaters;
 
     movie.save(function(err) {
       if (err) {
