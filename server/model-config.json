@@ -47,5 +47,9 @@
   "Time": {
     "dataSource": "db",
     "public": true
+  },
+  "Genre": {
+    "dataSource": "db",
+    "public": true
   }
 }
