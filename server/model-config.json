@@ -23,5 +23,9 @@
   "Role": {
     "dataSource": "db",
     "public": false
+  },
+  "Theater": {
+    "dataSource": "db",
+    "public": true
   }
 }
