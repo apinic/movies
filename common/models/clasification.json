@@ -1,0 +1,22 @@
+{
+  "name": "Clasification",
+  "plural": "Clasifications",
+  "base": "PersistedModel",
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "short_name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}

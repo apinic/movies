@@ -1,0 +1,37 @@
+{
+  "name": "Movie",
+  "plural": "Movies",
+  "base": "PersistedModel",
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "genres": {
+      "type": [
+        "number"
+      ],
+      "required": true
+    },
+    "clasification_id": {
+      "type": "number",
+      "required": true
+    },
+    "duration": {
+      "type": "number",
+      "required": true
+    },
+    "synopsis": {
+      "type": "string",
+      "required": true
+    },
+    "cover": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}

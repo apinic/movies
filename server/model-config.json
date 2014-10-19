@@ -27,5 +27,13 @@
   "Theater": {
     "dataSource": "db",
     "public": true
+  },
+  "Movie": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Clasification": {
+    "dataSource": "db",
+    "public": true
   }
 }
