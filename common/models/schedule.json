@@ -15,8 +15,8 @@
       "type": "number",
       "required": true
     },
-    "time": {
-      "type": "string",
+    "time_id": {
+      "type": "number",
       "required": true
     },
     "room": {
