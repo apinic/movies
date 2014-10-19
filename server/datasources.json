@@ -1,0 +1,10 @@
+{
+  "db": {
+    "host": "localhost",
+    "database": "movies",
+    "username": "postgres",
+    "password": "NodeRules",
+    "name": "db",
+    "connector": "postgresql"
+  }
+}
