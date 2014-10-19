@@ -23,6 +23,7 @@ module.exports.add = function(req, res) {
   var accessToken = req.body['access_token'];
   var theaters = req.body.theaters;
   res.send(theaters);
+  /*
 
   if (process.env.APINIC_MOVIES_ACCESS_TOKEN !== accessToken) {
     res.json({error:{message:'access_token inválido.'}});
@@ -68,6 +69,7 @@ module.exports.add = function(req, res) {
       }
     });
   }
+  */
 };
 
 module.exports.delete = function(req, res) {
