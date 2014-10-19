@@ -8,7 +8,7 @@ exports.setup = function(_mongoose, _db) {
     'duration': String,
     'clasification': String,
     'genres': String,
-    'theaters': [],
+    'theaters': [String],
     'created_at': {
       'type': Date,
       'default': Date.now
