@@ -1,0 +1,39 @@
+{
+  "name": "Schedule",
+  "plural": "Schedules",
+  "base": "PersistedModel",
+  "properties": {
+    "movie_id": {
+      "type": "number",
+      "required": true
+    },
+    "theater_id": {
+      "type": "number",
+      "required": true
+    },
+    "day_id": {
+      "type": "number",
+      "required": true
+    },
+    "time": {
+      "type": "string",
+      "required": true
+    },
+    "room": {
+      "type": "string",
+      "required": true
+    },
+    "start_dt": {
+      "type": "date",
+      "required": true
+    },
+    "end_dt": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}
