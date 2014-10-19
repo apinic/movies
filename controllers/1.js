@@ -22,7 +22,7 @@ module.exports.add = function(req, res) {
   var genres = req.body.genres;
   var accessToken = req.body['access_token'];
   var theaters = req.body.theaters;
-  res.send(theaters);
+  res.json({error:{message:theaters}});
   /*
 
   if (process.env.APINIC_MOVIES_ACCESS_TOKEN !== accessToken) {
