@@ -21,7 +21,7 @@ module.exports.add = function(req, res) {
   var clasification = req.body.clasification;
   var genres = req.body.genres;
   var accessToken = req.body['access_token'];
-  var theaters = req.query.theaters;
+  var theaters = req.body.theaters;
 
   if (process.env.APINIC_MOVIES_ACCESS_TOKEN !== accessToken) {
     res.json({error:{message:'access_token inválido.'}});
@@ -53,11 +53,9 @@ module.exports.add = function(req, res) {
     movie.duration = duration;
     movie.clasification = clasification;
     movie.genres = genres;
-    if (theaters) {
-      theaters.forEach(function(theater){
-        movie.theaters.push(theater);
-      });
-    }
+    theaters.forEach(function(theater){
+      movie.theaters.push(theater);
+    });
     movie.save(function(err) {
       if (err) {
         res.json({error:{message:err}});
