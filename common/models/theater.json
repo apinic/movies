@@ -27,10 +27,10 @@
       ]
     },
     "latitude": {
-      "type": "number"
+      "type": "string"
     },
     "longitude": {
-      "type": "number"
+      "type": "string"
     },
     "address": {
       "type": "string"
