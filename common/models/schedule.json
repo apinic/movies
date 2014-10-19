@@ -33,7 +33,28 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "movie": {
+      "type": "belongsTo",
+      "model": "Movie",
+      "foreignKey": "movie_id"
+    },
+    "theater": {
+      "type": "belongsTo",
+      "model": "Theater",
+      "foreignKey": "theater_id"
+    },
+    "day": {
+      "type": "belongsTo",
+      "model": "Day",
+      "foreignKey": "day_id"
+    },
+    "time": {
+      "type": "belongsTo",
+      "model": "Time",
+      "foreignKey": "time_id"
+    }
+  },
   "acls": [
     {
       "accessType": "*",
