@@ -37,7 +37,13 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "clasification": {
+      "type": "belongsTo",
+      "model": "Clasification",
+      "foreignKey": "clasification_id"
+    }
+  },
   "acls": [
     {
       "accessType": "*",
