@@ -53,9 +53,11 @@ module.exports.add = function(req, res) {
     movie.duration = duration;
     movie.clasification = clasification;
     movie.genres = genres;
-    theaters.forEach(function(theater){
-      movie.theaters.push(theater);
-    });
+    if (theaters) {
+      theaters.forEach(function(theater){
+        movie.theaters.push(theater);
+      });
+    }
     movie.save(function(err) {
       if (err) {
         res.json({error:{message:err}});
