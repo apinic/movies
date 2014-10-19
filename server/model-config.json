@@ -39,5 +39,9 @@
   "Schedule": {
     "dataSource": "db",
     "public": true
+  },
+  "Day": {
+    "dataSource": "db",
+    "public": true
   }
 }
