@@ -1,6 +1,11 @@
 {
   "db": {
     "name": "db",
-    "connector": "memory"
+    "connector": "postgresql",
+    "host": "localhost",
+    "username": "postgres",
+    "password": "NodeRules",
+    "database": "movies",
+    "ssl": false
   }
 }
