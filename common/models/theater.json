@@ -16,6 +16,9 @@
         "string"
       ]
     },
+    "web": {
+      "type": "string"
+    },
     "emails": {
       "type": [
         "string"
